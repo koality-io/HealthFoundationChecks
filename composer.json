@@ -1,0 +1,24 @@
+{
+  "name": "leankoala/healthfoundationchecks",
+  "description": "A expendable health check framework for PHP",
+  "authors": [
+    {
+      "name": "Nils Langner",
+      "email": "nils.langner@leankoala.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "guzzlehttp/guzzle": "^7.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Leankoala\\HealthFoundationChecks\\": "src/"
+    }
+  },
+  "suggest": {
+    "ext-mysqli": "Needed if database checks are used",
+    "ext-json": "Used for most output formats"
+  },
+  "license": "MIT"
+}
