@@ -3,7 +3,7 @@
 namespace Leankoala\HealthFoundationChecks\Files\Content;
 
 use Leankoala\HealthFoundationChecks\BasicCheck;
-use Leankoala\HealthFoundationChecks\MetricAwareResult;
+use Leankoala\HealthFoundationBase\Check\MetricAwareResult;
 use Leankoala\HealthFoundationBase\Check\Result;
 
 class NumberOfLinesCheck extends BasicCheck

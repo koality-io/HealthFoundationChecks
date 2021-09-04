@@ -3,7 +3,7 @@
 namespace Leankoala\HealthFoundationChecks\Device;
 
 use Leankoala\HealthFoundationBase\Check\Check;
-use Leankoala\HealthFoundationChecks\MetricAwareResult;
+use Leankoala\HealthFoundationBase\Check\MetricAwareResult;
 use Leankoala\HealthFoundationBase\Check\Result;
 
 class SpaceUsedCheck implements Check
