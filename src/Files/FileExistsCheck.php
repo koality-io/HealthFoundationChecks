@@ -1,6 +1,6 @@
 <?php
 
-namespace Leankoala\HealthFoundationChecks\Check\Files;
+namespace Leankoala\HealthFoundationChecks\Files;
 
 use Leankoala\HealthFoundationBase\Check\Check;
 use Leankoala\HealthFoundationBase\Check\Result;
@@ -11,7 +11,7 @@ use Leankoala\HealthFoundationBase\Check\Result;
  *
  * This class checks if a given file exists
  *
- * @package Leankoala\HealthFoundationChecks\Check\Files
+ * @package Leankoala\HealthFoundationChecks\Files
  */
 class FileExistsCheck implements Check
 {

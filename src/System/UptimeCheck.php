@@ -1,6 +1,6 @@
 <?php
 
-namespace Leankoala\HealthFoundationChecks\Check\System;
+namespace Leankoala\HealthFoundationChecks\System;
 
 use Leankoala\HealthFoundationBase\Check\Check;
 use Leankoala\HealthFoundationBase\Check\Result;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Leankoala\HealthFoundationChecks\Check\Basic\Fixed;
+namespace Leankoala\HealthFoundationChecks\Basic\Fixed;
 
 
 use Leankoala\HealthFoundationBase\Check\Check;

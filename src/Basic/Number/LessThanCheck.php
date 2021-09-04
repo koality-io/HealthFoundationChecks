@@ -1,6 +1,6 @@
 <?php
 
-namespace Leankoala\HealthFoundationChecks\Check\Basic\Number;
+namespace Leankoala\HealthFoundationChecks\Basic\Number;
 
 use Leankoala\HealthFoundationBase\Check\Check;
 use Leankoala\HealthFoundationBase\Check\Result;
@@ -10,7 +10,7 @@ use Leankoala\HealthFoundationBase\Check\Result;
  *
  * Checks if a given number is less than an expected value
  *
- * @package Leankoala\HealthFoundationChecks\Check\Basic\Number
+ * @package Leankoala\HealthFoundationChecks\Basic\Number
  */
 class LessThanCheck implements Check
 {

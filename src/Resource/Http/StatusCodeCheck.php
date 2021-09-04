@@ -1,11 +1,11 @@
 <?php
 
-namespace Leankoala\HealthFoundationChecks\Check\Resource\Http;
+namespace Leankoala\HealthFoundationChecks\Resource\Http;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Leankoala\HealthFoundationBase\Check\Check;
-use Leankoala\HealthFoundationChecks\Check\HttpClientAwareCheck;
+use Leankoala\HealthFoundationChecks\HttpClientAwareCheck;
 use Leankoala\HealthFoundationBase\Check\Result;
 
 class StatusCodeCheck implements Check, HttpClientAwareCheck

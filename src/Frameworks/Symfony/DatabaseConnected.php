@@ -1,6 +1,6 @@
 <?php
 
-namespace Leankoala\HealthFoundationChecks\Check\Frameworks\Symfony;
+namespace Leankoala\HealthFoundationChecks\Frameworks\Symfony;
 
 use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\DBAL\Connection;
@@ -10,7 +10,7 @@ use Leankoala\HealthFoundationBase\Check\Result;
 /**
  * Class DatabaseConnected
  *
- * @package Leankoala\HealthFoundationChecks\Check\Frameworks\Symfony
+ * @package Leankoala\HealthFoundationChecks\Frameworks\Symfony
  *
  * @author Nils Langner <nils.langner@leankoala.com>
  * created 2021-03-02

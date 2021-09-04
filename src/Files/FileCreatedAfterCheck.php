@@ -1,6 +1,6 @@
 <?php
 
-namespace Leankoala\HealthFoundationChecks\Check\Files;
+namespace Leankoala\HealthFoundationChecks\Files;
 
 use Leankoala\HealthFoundationBase\Check\Check;
 use Leankoala\HealthFoundationBase\Check\Result;
@@ -13,7 +13,7 @@ use Leankoala\HealthFoundationBase\Check\Result;
  *
  * Use case 1: Is there a new backup file for a given database
  *
- * @package Leankoala\HealthFoundationChecks\Check\Files
+ * @package Leankoala\HealthFoundationChecks\Files
  */
 class FileCreatedAfterCheck implements Check
 {

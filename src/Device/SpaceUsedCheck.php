@@ -1,9 +1,9 @@
 <?php
 
-namespace Leankoala\HealthFoundationChecks\Check\Device;
+namespace Leankoala\HealthFoundationChecks\Device;
 
 use Leankoala\HealthFoundationBase\Check\Check;
-use Leankoala\HealthFoundationChecks\Check\MetricAwareResult;
+use Leankoala\HealthFoundationChecks\MetricAwareResult;
 use Leankoala\HealthFoundationBase\Check\Result;
 
 class SpaceUsedCheck implements Check

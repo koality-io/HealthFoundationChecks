@@ -1,9 +1,9 @@
 <?php
 
-namespace Leankoala\HealthFoundationChecks\Check\Files\Content;
+namespace Leankoala\HealthFoundationChecks\Files\Content;
 
-use Leankoala\HealthFoundationChecks\Check\BasicCheck;
-use Leankoala\HealthFoundationChecks\Check\MetricAwareResult;
+use Leankoala\HealthFoundationChecks\BasicCheck;
+use Leankoala\HealthFoundationChecks\MetricAwareResult;
 use Leankoala\HealthFoundationBase\Check\Result;
 
 class NumberOfLinesCheck extends BasicCheck

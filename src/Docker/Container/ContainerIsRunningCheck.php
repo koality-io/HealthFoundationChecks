@@ -1,6 +1,6 @@
 <?php
 
-namespace Leankoala\HealthFoundationChecks\Check\Docker\Container;
+namespace Leankoala\HealthFoundationChecks\Docker\Container;
 
 
 use Leankoala\HealthFoundationBase\Check\Check;

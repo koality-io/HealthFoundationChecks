@@ -1,6 +1,6 @@
 <?php
 
-namespace Leankoala\HealthFoundationChecks\Check\Database\Mysql;
+namespace Leankoala\HealthFoundationChecks\Database\Mysql;
 
 use Leankoala\HealthFoundationBase\Check\Check;
 use Leankoala\HealthFoundationBase\Check\Result;
@@ -10,7 +10,7 @@ use Leankoala\HealthFoundationBase\Check\Result;
  *
  * Checks if a mysql database is running on a defined host with user and password.
  *
- * @package Leankoala\HealthFoundationChecks\Check\Database\Mysql
+ * @package Leankoala\HealthFoundationChecks\Database\Mysql
  */
 class MysqlRunningCheck implements Check
 {

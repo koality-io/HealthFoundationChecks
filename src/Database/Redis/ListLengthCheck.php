@@ -1,6 +1,6 @@
 <?php
 
-namespace Leankoala\HealthFoundationChecks\Check\Database\Redis;
+namespace Leankoala\HealthFoundationChecks\Database\Redis;
 
 use Leankoala\HealthFoundationBase\Check\Check;
 use Leankoala\HealthFoundationBase\Check\Result;
@@ -10,7 +10,7 @@ use Leankoala\HealthFoundationBase\Check\Result;
  *
  * Check if the length of a redis list is not too big
  *
- * @package Leankoala\HealthFoundationChecks\Check\Database\Redis
+ * @package Leankoala\HealthFoundationChecks\Database\Redis
  */
 class ListLengthCheck implements Check
 {
