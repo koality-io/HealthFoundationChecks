@@ -2,15 +2,15 @@
 
 namespace Leankoala\HealthFoundationChecks\Files\Content;
 
-use Leankoala\HealthFoundationChecks\BasicCheck;
 use Leankoala\HealthFoundationBase\Check\MetricAwareResult;
 use Leankoala\HealthFoundationBase\Check\Result;
+use Leankoala\HealthFoundationChecks\BasicCheck;
 
 class NumberOfLinesCheck extends BasicCheck
 {
     protected $identifier = 'base:files:content:numberOfLines';
 
-    private $file;
+    private $files = [];
 
     private $relation;
 
@@ -19,15 +19,17 @@ class NumberOfLinesCheck extends BasicCheck
     const RELATION_MAX = 'max';
     const RELATION_MIN = 'min';
 
-    private $pattern;
+    private $pattern = [];
 
     /**
      * @return MetricAwareResult
      */
     public function run()
     {
-        if (!file_exists($this->file)) {
-            return new MetricAwareResult(Result::STATUS_FAIL, 'Unable to get document length because file does not exist.');
+        foreach ($this->files as $file) {
+            if (!file_exists($file)) {
+                return new MetricAwareResult(Result::STATUS_FAIL, 'Unable to get document length because file "' . $file . '" does not exist.');
+            }
         }
 
         $numberLines = $this->getNumberOfLines();
@@ -40,18 +42,26 @@ class NumberOfLinesCheck extends BasicCheck
      */
     private function getNumberOfLines()
     {
-        $grep = '';
-        if ($this->pattern) {
-            foreach ($this->pattern as $pattern) {
-                $grep .= ' | grep -a  "' . $pattern . '"';
+        $numberOfLines = 0;
+
+        foreach ($this->files as $file) {
+            $grep = '';
+            if ($this->pattern) {
+                foreach ($this->pattern as $pattern) {
+                    if (strpos($pattern, self::REG_EX_PREFIX) === false) {
+                        $grep .= ' | grep -a  "' . $pattern . '"';
+                    } else {
+                        $grep .= ' | grep -a -e "' . substr($pattern, strlen(self::REG_EX_PREFIX)) . '"';
+                    }
+                }
             }
+
+            $command = 'cat ' . $file . $grep . ' | wc -l';
+
+            exec($command, $output, $return);
+            $numberOfLines += (int)$output[0];
         }
-
-        $command = 'cat ' . $this->file . $grep . ' | wc -l';
-
-        exec($command, $output, $return);
-
-        return (int)$output[0];
+        return $numberOfLines;
     }
 
     /**
@@ -76,12 +86,19 @@ class NumberOfLinesCheck extends BasicCheck
 
         $result->setMetric($numberLines, 'lines');
 
+        $result->addAttribute('files', $this->files);
+        $result->addAttribute('pattern', $this->pattern);
+
         return $result;
     }
 
-    public function init($file, $limit, $relation = self::RELATION_MAX, $pattern = null)
+    public function init($files, $limit, $relation = self::RELATION_MAX, $pattern = [])
     {
-        $this->file = $file;
+        if (is_string($files)) {
+            $files = [$files];
+        }
+
+        $this->files = $files;
         $this->pattern = (array)$pattern;
         $this->relation = $relation;
         $this->limit = $limit;
@@ -89,6 +106,6 @@ class NumberOfLinesCheck extends BasicCheck
 
     protected function getCheckIdentifier()
     {
-        return $this->identifier . '.' . md5($this->file . serialize($this->pattern));
+        return $this->identifier . '.' . md5(json_encode($this->files) . serialize($this->pattern));
     }
 }
