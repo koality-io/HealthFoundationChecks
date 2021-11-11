@@ -8,6 +8,8 @@ use Leankoala\HealthFoundationChecks\BasicCheck;
 
 class NumberOfLinesCheck extends BasicCheck
 {
+    const REG_EX_PREFIX = 'Regex:';
+
     protected $identifier = 'base:files:content:numberOfLines';
 
     private $files = [];
